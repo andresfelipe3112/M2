@@ -216,3 +216,197 @@ class Presentational extends React.Component {
         <ul>cc</ul>
       
       </div>
+
+
+
+//REACT HOOKS
+
+import React, { useState } from 'react';
+
+function Example() {
+  // Declara una nueva variable de estado, la cual llamaremos “count”
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+
+
+
+      // React Native sencillo
+
+      import React from 'react';
+import { Text, View } from 'react-native';
+
+const HelloWorldApp = () => {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
+      <Text>Hello, world!</Text>
+    </View>
+  )
+}
+export default HelloWorldApp;
+
+
+
+
+
+
+
+//react native usando ya props
+
+
+import React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  center: {
+    alignItems: 'center'
+  }
+})
+
+const Greeting = (props) => {
+  return (
+    <View style={styles.center}>
+      <Text>Hello {props.name}!</Text>
+    </View>
+  );
+}
+
+const LotsOfGreetings = () => {
+  return (
+    <View style={[styles.center, {top: 50}]}>
+      <Greeting name='Rexxar' />
+      <Greeting name='Jaina' />
+      <Greeting name='Valeera' />
+    </View>
+  );
+}
+
+
+
+//react native con clases
+
+import React, { useState } from 'react';
+
+
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className="container">
+      <p>You clicked {count} times</p>
+      <button
+        onClick={() => setCount(count + 1)}>
+        Click me!
+      </button>
+    </div>
+  );
+};
+
+
+// CSS
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// OTRO REACT NATIVE CON CLASES 
+
+import React, { Component } from 'react'
+import {
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  View,
+} from 'react-native'
+
+class App extends Component {
+  state = {
+    count: 0
+  }
+
+  onPress = () => {
+    this.setState({
+      count: this.state.count + 1
+    })
+  }
+
+ render() {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity
+         style={styles.button}
+         onPress={this.onPress}
+        >
+         <Text>Click me</Text>
+        </TouchableOpacity>
+        <View>
+          <Text>
+            You clicked { this.state.count } times
+          </Text>
+        </View>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10,
+    marginBottom: 10
+  }
+})
+
+export default App;
+
+
+
+// react native con metodo funcional
+
+import React, { useState } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <View style={styles.container}>
+      <Text>You clicked {count} times</Text>
+      <Button
+        onPress={() => setCount(count + 1)}
+        title="Click me!"
+      />
+    </View>
+  );
+};
+
+// React Native Styles
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});

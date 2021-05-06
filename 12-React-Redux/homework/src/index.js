@@ -5,13 +5,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter } from 'react-router-dom';
-//import { Provider } from "react-redux";
-//import store from "./store/index";
+// Para poder conectar mi aplicación con la Store debo importar lo siguiente:
+import { Provider } from "react-redux";
+import store from "./store/index";
 
+// El provider debe envolver nuestra App y pasarle como propiedad nuestro 'store'
 ReactDOM.render(
+  <Provider store={store}>
     <BrowserRouter>
       <App />
-    </BrowserRouter>,
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

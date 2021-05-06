@@ -1,3 +1,4 @@
+// Será nuestro Header que nos permitira navegar por nuestras rutas.
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../../logoHenry.png'
